@@ -24,7 +24,7 @@ public class HibernateProxyTypeAdapter extends TypeAdapter<HibernateProxy> {
     };
     private final Gson context;
 
-    private HibernateProxyTypeAdapter(Gson context) {
+    public HibernateProxyTypeAdapter(Gson context) {
         this.context = context;
     }
 

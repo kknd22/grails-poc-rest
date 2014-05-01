@@ -9,7 +9,7 @@ class Person {
 	static hasMany = [addresses: Address]
 	
 	static mapping = {
-		addresses lazy: false 
+		addresses lazy: true 
 	}
     static constraints = {
     }
