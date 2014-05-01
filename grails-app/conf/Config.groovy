@@ -31,6 +31,9 @@ grails.mime.types = [ // the first one is the default format
     xml:           ['text/xml', 'application/xml']
 ]
 
+//grails.converters.gson.serializeProxies=false
+//grails.converters.gson.resolveProxies=false
+
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
