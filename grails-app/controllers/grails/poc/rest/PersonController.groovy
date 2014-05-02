@@ -15,8 +15,9 @@ import static org.springframework.http.HttpStatus.*
 
 //import static org.springframework.http.HttpMethod.*
 
-class PersonController {
-
+class PersonController  {
+	static responseFormats = ['hal','json']
+	
 	def list(Integer max) {
 		println("in PersonController list() params: [$params]")
 		//params.max = Math.min(max ?: 10, 100)
@@ -25,7 +26,8 @@ class PersonController {
 		def dtos= []
 		ps.each{
 			def dto = new PersonDto()
-			BeanUtils.copyProperties(it, dto)
+			dto.populated(it)
+			//BeanUtils.copyProperties(it, dto)
 			dtos << dto
 		}
 		
@@ -50,9 +52,11 @@ class PersonController {
 		println("in PersonController read()")
 		def ps =  Person.get(id)
 		def dto = new PersonDto()
+		dto.populated(ps)
 		
-		BeanUtils.copyProperties(ps, dto)
-		println("dto: ${dto.dump()}")
+		//BeanUtils.copyProperties(ps, dto)
+		//println("dto: ${dto.dump()}")
+		println("dto: ${dto as GSON}")
 		/*
 		response.contentType = "application/json"
 		render dto as GSON

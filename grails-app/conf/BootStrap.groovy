@@ -28,8 +28,8 @@ class BootStrap {
 		p2.addresses << new Address(street: "street22")
 		p2.save()
 		
-		def p3 = new Person(name: "xxxxxx")
-		p3.save()
+		//def p3 = new Person(name: "xxxxxx")
+		//p3.save()
 
 /*
   		GsonBuilder b = new GsonBuilder();

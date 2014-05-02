@@ -13,13 +13,10 @@ beans = {
 		collectionName = 'people'
 	}
 	
-	halAddressRenderer(HalJsonRenderer, grails.poc.rest.Address)
-	hallAddressCollectionRenderer(HalJsonCollectionRenderer,  grails.poc.rest.Address)
-
 	halAddressDtoRenderer(HalJsonRenderer, dto.AddressDto)
 	hallAddressDtoCollectionRenderer(HalJsonCollectionRenderer,  dto.AddressDto)
 
-	halCarRenderer(HalJsonRenderer, grails.poc.rest.Car)
+	halCarDtoRenderer(HalJsonRenderer, dto.CarDto)
 		
 	halBookRenderer(HalJsonRenderer, grails.poc.rest.Book)
 	hallBookCollectionRenderer(HalJsonCollectionRenderer,  grails.poc.rest.Book)

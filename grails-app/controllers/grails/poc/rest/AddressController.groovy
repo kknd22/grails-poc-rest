@@ -12,7 +12,8 @@ import static org.springframework.http.HttpStatus.*
 //import static org.springframework.http.HttpMethod.*
 
 class AddressController {
-
+	static responseFormats = ['hal','json']
+	
 	def list(Integer pId, Integer max) {
 		println("in AddressController list() params: $params")
 		//params.max = Math.min(max ?: 10, 100)
@@ -20,27 +21,27 @@ class AddressController {
 		def ads =  Person.get(pId).addresses 
 		
 
-		def dtos= []
+		def dtos= new ArrayList<AddressDto>()
 		ads.each{ 
-			def dto = new AddressDto()
-			BeanUtils.copyProperties(it, dto)
+			def dto = new AddressDto(id: it.id, street: it.street)
 			dtos << dto
 		}
 		
 		println(dtos)
-		response.contentType = "application/json"
-		render dtos as GSON
+		//response.contentType = "application/json"
+		//render dtos as GSON
+		respond dtos
 	}
 
 	def read(Integer pId, Integer id) {
 		println("in AddressController read() params: $params")
 		def a =  Person.get(pId).addresses.find{it.id == id}
 		
-		def dto = new AddressDto() 
-		BeanUtils.copyProperties(a, dto)
+		def dto = new AddressDto(id: a.id, street: a.street) 
 		println(dto)
-		response.contentType = "application/json"
-		render dto as GSON
+		//response.contentType = "application/json"
+		//render dto as GSON
+		respond dto
 	}
 
 	@Transactional 

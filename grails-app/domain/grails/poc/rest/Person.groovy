@@ -10,7 +10,7 @@ class Person {
 	
 	static mapping = {
 		addresses lazy: false 
-		car lazy: true
+		car lazy: false
 	}
     static constraints = {
     }

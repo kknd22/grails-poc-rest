@@ -6,7 +6,9 @@ class UrlMappings {
 		"/persons/$id" 					(controller:"person") {action=["GET": "read", , "DELETE" : "delete"]}
 		"/persons/$pId/addresses" 		(controller:"address") {action=["GET": "list", , "POST": "saveOrUpdate"]}
 		"/persons/$pId/addresses/$id"	(controller:"address") {action=["GET": "read", "DELETE" : "delete"]}
-		
+		"/persons/$pId/cars" 			(controller:"car") {action=["GET": "list", , "POST": "saveOrUpdate"]}
+		"/persons/$pId/car/$id"			(controller:"car") {action=["GET": "read", "DELETE" : "delete"]}
+
 		"/books" (resources: "book") {
 			"/chapters" (resources: "bookChapter")
 		}
