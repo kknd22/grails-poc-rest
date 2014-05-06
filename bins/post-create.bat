@@ -1,0 +1,1 @@
+curl -i -X POST -H "Content-Type: application/json" -d "{'title':'Along Came A Spider'}" localhost:8080/grails-poc-rest/books
