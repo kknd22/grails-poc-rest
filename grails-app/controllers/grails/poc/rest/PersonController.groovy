@@ -31,7 +31,8 @@ class PersonController  {
 			dtos << dto
 		}
 		
-		println("dtos: ${dtos.dump()}")
+		//println("dtos: ${dtos.dump()}")
+		println("dtos: ${dtos as GSON}")
 		respond dtos
 /*		
 		response.contentType = "application/json"

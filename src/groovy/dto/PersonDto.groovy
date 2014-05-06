@@ -4,14 +4,14 @@ import grails.poc.rest.Person;
 import grails.poc.rest.Address;
 import grails.poc.rest.Car;
 
-import grails.rest.Resource
-@Resource(formats=['hal', 'json', 'xml'])
 class PersonDto {
 	Integer id
 	String name
 	String nick
 	List<AddressDto> addresses
 	CarDto car
+	
+	//static hasMany =[addresses: AddressDto]
 	
 	void populated(Person p) {
 		id=p.id

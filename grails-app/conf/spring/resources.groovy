@@ -17,7 +17,8 @@ beans = {
 	hallAddressDtoCollectionRenderer(HalJsonCollectionRenderer,  dto.AddressDto)
 
 	halCarDtoRenderer(HalJsonRenderer, dto.CarDto)
-		
+	halCarDtoCollectionDtoRenderer(HalJsonCollectionRenderer, dto.CarDto)
+	
 	halBookRenderer(HalJsonRenderer, grails.poc.rest.Book)
 	hallBookCollectionRenderer(HalJsonCollectionRenderer,  grails.poc.rest.Book)
 

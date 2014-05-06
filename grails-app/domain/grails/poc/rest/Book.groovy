@@ -8,6 +8,11 @@ class Book {
 	String title
 
 	static hasMany = [chapters: BookChapter]
+
+	
+	static mapping = {
+		chapters lazy: false
+	}
 	
     static constraints = {
     	title blank: false
